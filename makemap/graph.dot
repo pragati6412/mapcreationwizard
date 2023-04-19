@@ -1,0 +1,11 @@
+graph grid
+{
+	fontname="Helvetica,Arial,sans-serif"
+	node [fontname="Helvetica,Arial,sans-serif" color="red" shape="circle" width=0.5 height=0.5 fontcolor="white"]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+	layout=dot
+	bgcolor="transparent"
+	labelloc = "t"
+	node [shape="circle" width=0.5 height=0.5]
+    edge [weight=1000 style=bold color="blue"]
+}
