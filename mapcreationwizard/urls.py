@@ -16,11 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from makemap import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('upload/',views.upload_page,name='upload'),
+    path('download',views.download_page,name='download'),
     path('makemap/', views.map_creation, name='makemap'),
     path('first_image_coordinates/', views.first_image_coordinates, name='first_image_coordinates'),
     path('image_coordinates/', views.image_coordinates1, name='image_coordinates'),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

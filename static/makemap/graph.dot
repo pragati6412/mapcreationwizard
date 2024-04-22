@@ -9,6 +9,5 @@ graph grid
 	labelloc = "t"
 	node [shape="circle" width=0.5 height=0.5]
     edge [weight=1000 style=bold color="blue"]
-	IMG1;
-	rank=same {IMG1 -- IMG2};
+	Im1;
 }

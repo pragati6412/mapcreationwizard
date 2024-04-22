@@ -1,0 +1,35 @@
+{% extends 'makemap/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row download-container">
+  <div class="col-md-2"></div>
+  <div class="col-md-8 download-buttons text-center">
+    <h2>Download Here</h2>
+    <div class="btn-group-vertical" role="group" aria-label="Download figures" style="margin-bottom: 2rem;"> <a href="{% static 'assets/Figure1_DEM_Streams.jpg' %}" class="btn btn-primary download-button">
+        Download DEM Streams
+      </a>
+      <a href="{% static 'assets/Figure2_Hypsometric_Integral.jpg' %}" class="btn btn-primary download-button">
+        Download Hypsometric Integral
+      </a>
+      <a href="{% static 'assets/Figure3_Shaded_Profile_Hypsometric_Curve.jpg' %}" class="btn btn-primary download-button">
+        Download Shaded Profile
+      </a>
+      <a href="{% static 'assets/Figure4_Basin_Asymmetry.jpg' %}" class="btn btn-primary download-button">
+        Download Basin Asymmetry
+      </a>
+      <a href="{% static 'assets/Figure5_Area_vs_Stream_Length.jpg' %}" class="btn btn-primary download-button">
+        Download Area vs Stream Length
+      </a>
+      <a href="{% static 'assets/Figure6_Fitted_Power_Law.jpg' %}" class="btn btn-primary download-button">
+        Download Fitted Power Law
+      </a>
+      <a href="{% static 'assets/Figure7_Stream_Network_and_Hypsometric_Curves.jpg' %}" class="btn btn-primary download-button">
+        Download Stream Network and Hypsometric Curves
+      </a>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+{% endblock %}

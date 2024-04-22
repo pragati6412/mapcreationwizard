@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from .forms import mapForm, ImageCoordinatesForm, first_image_coordinatesForm
+from .forms import mapForm, ImageCoordinatesForm, first_image_coordinatesForm, upload_form
 from django.shortcuts import redirect
 from .models import map, image_coordinates, transitions
 import subprocess
 from django import forms
+import os
+import shutil
 # Create your views here.
 graph_file_text="""
 graph grid
@@ -45,7 +47,50 @@ def map_creation(request):
         
     return render(request, 'makemap/map_creation.html', {'form':form})
 
+def upload_page(request):
+    if request.method == "POST":
+        form = upload_form(request.POST, request.FILES)
 
+        file_extensions={
+            "tfw_file":".tfw",
+            "tif_file":".tif",
+            "cpg_file": ".tif.vat.cpg",
+            "dbf_file": ".tif.vat.dbf",
+            "ovr_file": ".tif.ovr"
+        }
+
+        
+        if form.is_valid():
+            for file_field_name in request.FILES.keys():
+                # Handle each uploaded file
+                # Save it to the desired location
+                file_name=form.cleaned_data['title']+file_extensions[file_field_name]
+                with open(file_name, 'wb') as destination:
+                    for chunk in form.cleaned_data[file_field_name].chunks():
+                        destination.write(chunk)
+            
+            command=f"matlab -batch  \"analyze_indices('{form.cleaned_data['title']}.tif');exit;\""
+            os.system(command)
+            files = os.listdir()
+
+# Iterate through each file
+            for file in files:
+                # Check if the file is a .jpg file
+                if file.endswith('.jpg'):
+                    # Construct full paths for source and destination files
+                    # Move the file to the destination subfolder
+                    # print(f"makemap/static/makemap/assets/{file}")
+                    shutil.move(file, f"makemap/static/makemap/assets/{file}")
+                
+                if file.startswith(form.cleaned_data['title']):
+                    os.remove(file)
+            return redirect('download')
+    else:
+        form = upload_form()
+    return render(request, 'makemap/upload.html', {'form':form})
+
+def download_page(request):
+    return render(request, 'makemap/download_hypso_integral.html')
 
 def first_image_coordinates(request):
     form = first_image_coordinatesForm()

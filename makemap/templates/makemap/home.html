@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Majuli-VR</title>
+    <title>Geomorphic Indices</title>
     <link rel="stylesheet" href="{%static 'assets/bootstrap/css/bootstrap.min.css'%}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
@@ -15,22 +15,22 @@
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
     <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#">Majuli-VR</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+        <div class="container"><a class="navbar-brand" href="#">Geomorphic Indices</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item nav-link"><a class="nav-link active" href="#about">About</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" href="#download">Create MAP</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#download">Get Graph</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <header class="masthead" >
-        <div class="intro-body"><img src="{%static 'assets/img/DSC_0772.png'%}">
+        <div class="intro-body"><img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWFydGglMjBmcm9tJTIwc3BhY2V8ZW58MHx8MHx8fDA%3D">
             <div class="container">
                 <div class="row" >
                     <div class="col-lg-8 mx-auto">
-                        <h1 class="brand-heading">MapMaker</h1>
-                        <p class="intro-text">An online mapmaker for the project of VR tour of Majuli River Island.</p><a class="btn btn-link btn-circle" role="button" href="#about"><i class="fa fa-angle-double-down animated"></i></a>
+                        <h1 class="brand-heading">Graph Generator</h1>
+                        <p class="intro-text">Assessment of Geomorphic Indices for dem data</p><a class="btn btn-link btn-circle" role="button" href="#about"><i class="fa fa-angle-double-down animated"></i></a>
                     </div>
                 </div>
             </div>
@@ -41,8 +41,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h2>About Mapmaker</h2>
-                    <p>Mapmaker is an online map maker for the <strong>Majuli river island VR tour</strong>. It takes in the image names and the direction to the next photo</p>
+                    <h2>About Geomorphic Indices</h2>
+                    <p>Graph Generator is an online website for the <strong>Assessment of Geomorphic Indices</strong>. It takes in the dem data and generate curves
+                    </p>
                     <p></p>
                     <p></p>
                 </div>
@@ -52,13 +53,13 @@
     <section class="text-center download-section content-section" id="download" style="background-image: url('downloads-bg.jpg');">
         <div class="container">
             <div class="col-lg-8 mx-auto">
-                <h1>Create MAP</h1><a href="{% url 'makemap' %}"><button class="btn btn-primary btn-lg btn-default" type="button">Create A new Map</button></a>
+                <h1>GET GRAPH</h1><a href="{% url 'upload' %}"><button class="btn btn-primary btn-lg btn-default" type="button">Assessment of dem data</button></a>
             </div>
         </div>
     </section>
     <footer>
         <div class="container text-center">
-            <p>Copyright ©&nbsp;Majuli-VR 2023</p>
+            <p>Copyright ©&nbsp;Geomorphic Indices 2024</p>
         </div>
     </footer>
     <script src="{%static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
